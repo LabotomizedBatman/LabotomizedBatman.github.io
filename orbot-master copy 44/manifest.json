@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Orbot Extension",
+    "version": "1.0",
+    "description": "Extension for Orbot",
+    "permissions": [
+        "proxy",
+        "tabs",
+        "storage",
+        "alarms",
+        "identity",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*",
+        "https://www.google.com/"
+    ],
+    "action": {
+        "default_popup": "orbot.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["files/AndroidManifest.xml"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}
